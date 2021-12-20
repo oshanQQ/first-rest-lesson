@@ -2,6 +2,9 @@ const express = require("express");
 const sqlite3 = require("sqlite3");
 const app = express();
 const dbPath = "app/db/database.sqlite3";
+const path = require("path");
+
+app.use(express.static(path.join(__dirname, "public")));
 
 // Get all users
 app.get("/api/v1/users", (req, res) => {
